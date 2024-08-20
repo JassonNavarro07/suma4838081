@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="suma4838081.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+
+            <Entry x:Name="Entryprimernumero"
+                   Placeholder="Ingrese el primer numero"
+                   Keyboard="Numeric"/>
+            <Entry x:Name="Entrysegundonumero"
+                   Placeholder="Ingrese el segundo numero"
+                   Keyboard="Numeric"/>
+            <Label x:Name="labelresultado"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+            <Button
+                x:Name="sumaBtn"
+                Text="Click me"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <ListView x:Name="listview" FlexLayout.Grow="1"  HasUnevenRows="True" ItemTapped="listview_ItemTapped_1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Padding="5">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="1"  Text="{Binding Suma}" FontAttributes="Bold"/>
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
